@@ -4,7 +4,7 @@
 #'
 #' @param items
 #'
-#' @return List
+#' @return dataframe
 #'
 #' @examples problemDetection(items)
 #'
@@ -14,11 +14,12 @@ problemDetection <- function(items) {
   print(items)
   items$z <- with(items, 80 - c)
   items$k <- with(items, a * b * d * z)
-  print(items$k)
+  # print(items$k)
   zz <- items[items$k>0,][,7]
-  print(zz)
+  # print(zz)
   summation <- sum(zz)
-  print(summation)
+  # print(summation)
   items$t <- with(items, k / summation)
-  print(items)
+  # print(items)
+  return(items)
 }
